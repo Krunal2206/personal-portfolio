@@ -5,6 +5,7 @@ const NavigationLinks = ({
   className = "",
   itemClassName = "",
   linkClassName = "",
+  activeClassName = "text-[var(--secondary-color)]",
   renderItem = (item) => item.name,
   onClick,
   container: Container = "ul",
@@ -19,8 +20,9 @@ const NavigationLinks = ({
           duration={500}
           offset={-80}
           spy
+          activeClass={activeClassName}
           onClick={onClick}
-          className={`hover:text-[var(--secondary-color)] cursor-pointer ${linkClassName}`}
+          className={`hover:text-[var(--secondary-color)] cursor-pointer transition-colors duration-200 ${linkClassName}`}
         >
           {renderItem(item)}
         </Link>

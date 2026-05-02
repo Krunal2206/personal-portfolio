@@ -5,25 +5,41 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema } from "./schema";
 import FormField from "./FormField";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const ContactSection = () => {
-
-  // Initialize the form with react-hook-form and zod for validation
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    setError,
   } = useForm({
     resolver: zodResolver(contactSchema),
   });
 
-  // Function to handle form submission
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    alert("Message sent successfully!");
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        setError("root", {
+          message: result.message || "Something went wrong.",
+        });
+        return;
+      }
+
+      reset();
+      alert("Message sent successfully!");
+    } catch (err) {
+      setError("root", { message: "Network error. Please try again." });
+    }
   };
 
   return (
@@ -66,19 +82,6 @@ const ContactSection = () => {
             />
           </FormField>
 
-          {/* Contact Number */}
-          <FormField
-            label="Contact Number"
-            error={errors.contactNumber?.message}
-          >
-            <input
-              type="text"
-              placeholder="Contact Number"
-              {...register("contactNumber")}
-              className="w-full px-4 py-2 rounded-full bg-transparent border border-white/30 text-[var(--primary-color)] focus:outline-none focus:border-[var(--secondary-color)] hover:border-[var(--secondary-color)] transition"
-            />
-          </FormField>
-
           {/* Message */}
           <FormField label="Message" error={errors.message?.message}>
             <textarea
@@ -89,11 +92,18 @@ const ContactSection = () => {
             />
           </FormField>
 
+          {/* Root-level error */}
+          {errors.root && (
+            <p className="text-red-500 text-sm text-center">
+              {errors.root.message}
+            </p>
+          )}
+
           {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 rounded-full bg-[var(--primary-color)] text-[var(--background-color)] font-semibold shadow-md hover:bg-[var(--secondary-color)] transition"
+            className="w-full py-3 rounded-full bg-[var(--primary-color)] text-[var(--background-color)] font-semibold shadow-md hover:bg-[var(--secondary-color)] transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>

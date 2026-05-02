@@ -26,13 +26,4 @@ export const projects = [
     githubLink: "https://github.com/username/project1",
     liveDemo: "https://project1.live",
   },
-  {
-    id: 4,
-    title: "Project One",
-    description: "A brief description of Project One.",
-    techStack: ["React", "Next.js", "Tailwind CSS"],
-    imageUrl: "/logo.png",
-    githubLink: "https://github.com/username/project1",
-    liveDemo: "https://project1.live",
-  },
 ];

@@ -1,8 +1,5 @@
 import NavigationLinks from "./NavigationLinks";
 
-/**
- * Mobile bottom navigation (visible on small screens only).
- */
 const MobileNavigation = () => (
   <div className="fixed bottom-8 w-full md:hidden z-50">
     <div className="container mx-auto">
@@ -10,7 +7,8 @@ const MobileNavigation = () => (
         <NavigationLinks
           className="justify-between w-full"
           itemClassName="flex items-center"
-          linkClassName="p-2 hover:text-[var(--secondary-color)] transition-colors"
+          linkClassName="p-2 transition-colors"
+          activeClassName="text-[#b49bff]"
           renderItem={(item) => <item.icon size={24} />}
           container="div"
           itemComponent="div"

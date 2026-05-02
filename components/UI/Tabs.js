@@ -1,14 +1,55 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { CardSpotlight } from "./card-spotlight";
 
-/**
- * Reusable Tabs component.
- * Props:
- * - tabs: Array of tab objects { title, value, content }
- */
+// Renders a single education entry
+const EducationItem = ({ item }) => (
+  <div>
+    <h4 className="text-lg font-semibold text-[var(--secondary-color)]">
+      🎓 {item.degree}
+    </h4>
+    <p>
+      {item.institution}, {item.location}
+    </p>
+    <p className="text-sm text-[var(--tertiary-color)]">{item.period}</p>
+  </div>
+);
+
+// Renders a single experience entry
+const ExperienceItem = ({ item }) => (
+  <div>
+    <h4 className="text-lg font-semibold text-[var(--secondary-color)]">
+      💼 {item.role}
+    </h4>
+    <p>{item.company}</p>
+    <p className="text-sm text-[var(--tertiary-color)]">{item.period}</p>
+    <ul className="list-disc ml-5 mt-2 space-y-1 text-sm">
+      {item.points.map((point, i) => (
+        <li key={i}>{point}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+// Picks the right renderer based on tab value
+const TabContent = ({ tab }) => {
+  const isEducation = tab.value === "education";
+
+  return (
+    <div className="text-gray-300 space-y-8">
+      {tab.items.map((item, i) =>
+        isEducation ? (
+          <EducationItem key={i} item={item} />
+        ) : (
+          <ExperienceItem key={i} item={item} />
+        ),
+      )}
+    </div>
+  );
+};
+
 export const Tabs = ({
   tabs,
   containerClassName,
@@ -47,7 +88,7 @@ export const Tabs = ({
       >
         <CardSpotlight>
           <div className="w-full p-8 text-lg md:text-xl font-bold bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl">
-            {activeTab.content}
+            <TabContent tab={activeTab} />
           </div>
         </CardSpotlight>
       </motion.div>

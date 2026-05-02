@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { CardSpotlight } from "../UI/card-spotlight";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const ProjectCard = ({ project, index }) => (
   <CardSpotlight>
@@ -13,13 +13,14 @@ const ProjectCard = ({ project, index }) => (
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden shadow-lg transition transform hover:-translate-y-2"
     >
-      <div className="relative h-48 w-full">
+      <div className="relative h-48 w-full overflow-hidden">
         <Image
           src={project.imageUrl}
           alt={project.title}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-500 group-hover:scale-110"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          priority={index === 0}
         />
       </div>
 

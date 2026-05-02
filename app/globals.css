@@ -1,6 +1,35 @@
 @import "tailwindcss";
 
-/* Root variables for colors */
+/* ✅ Tailwind v4: theme tokens live here, not in tailwind.config.js */
+@theme {
+  --color-background: #030014;
+  --color-primary: #ffffff;
+  --color-secondary: #cccccc;
+  --color-tertiary: #777777;
+  --color-shadow: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+  --background-color: #f5f5f5;
+  --primary-color: #0a0a0a;
+  --secondary-color: #444444;
+  --tertiary-color: #666666;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* ✅ Tailwind v4: explicit source paths — covers app/, components/, pages/ */
+@source "../app/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+@source "../pages/**/*.{js,ts,jsx,tsx}";
+
+/* CSS custom properties — used by your existing var(--x) references */
 :root {
   --background-color: #030014;
   --primary-color: #ffffff;
@@ -9,7 +38,7 @@
   --shadow-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Apply global body styles */
+/* Global body styles */
 body {
   background-color: var(--background-color);
   color: var(--primary-color);
@@ -26,7 +55,7 @@ body {
   height: 65px;
 }
 
-/* Apply sidebar styles */
+/* Sidebar styles */
 .profile-image {
   @apply w-28 h-28 mx-auto rounded-full border-2 border-[var(--secondary-color)] shadow-md object-cover;
 }

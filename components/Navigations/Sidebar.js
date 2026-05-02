@@ -1,13 +1,12 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { IoMdClose } from "react-icons/io";
-import { useRouter } from "next/navigation";
 import { scroller } from "react-scroll";
 import ProfileSection from "../Common/ProfileSection";
 import Button from "./SidebarButton";
+import { socials } from "../config/socials";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const router = useRouter();
 
   // Handle navigation and close sidebar
   const handleNavigation = (url) => {
@@ -64,7 +63,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <div className="mt-8 flex flex-col space-y-4">
                 {/* Connect with Me (LinkedIn) */}
                 <Button
-                  onClick={() => handleNavigation("https://www.linkedin.com/in/krunal2206")}
+                  onClick={() => handleNavigation(socials[0].href)}
                   className="bg-[var(--primary-color)] text-[var(--background-color)] hover:bg-[var(--secondary-color)]"
                 >
                   Connect with Me

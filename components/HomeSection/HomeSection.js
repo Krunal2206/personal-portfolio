@@ -32,7 +32,10 @@ const HomeSection = () => {
           </p>
 
           <a
-            href="#about"
+            href="/Krunal Thakar - Resume (TD).pdf"
+            // download="Krunal Thakar - Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-max relative overflow-hidden px-6 py-3 rounded-full transition-all duration-200 hover:bg-gray-800 text-center bg-white/10 backdrop-blur-md border border-white/20"
           >
             Get Resume
