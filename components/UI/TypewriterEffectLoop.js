@@ -6,15 +6,19 @@ const TypewriterEffectLoop = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Web Developer",
+        "a Software Engineer",
         2000,
         "",
         500,
-        "MERN Stack Developer",
+        "a Full Stack Developer",
         2000,
         "",
         500,
-        "Full Stack Engineer",
+        "a Quality Engineer",
+        2000,
+        "",
+        500,
+        "a DevOps Enthusiast",
         2000,
         "",
         500,

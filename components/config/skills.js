@@ -28,6 +28,7 @@ import {
   SiFastapi,
   SiLangchain,
   SiCucumber,
+  SiGraphql,
 } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
 import { DiMysql } from "react-icons/di";
@@ -44,6 +45,7 @@ export const skills = [
   { name: "Express.js", icon: SiExpress },
   { name: "FastAPI", icon: SiFastapi },
   { name: "REST APIs", icon: TbApi },
+  { name: "GraphQL", icon: SiGraphql },
   { name: "MongoDB", icon: SiMongodb },
   { name: "MySQL", icon: DiMysql },
   { name: "PostgreSQL", icon: SiPostgresql },

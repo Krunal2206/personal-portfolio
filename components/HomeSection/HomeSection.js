@@ -15,8 +15,9 @@ const HomeSection = () => {
             className="flex items-center space-x-2 px-4 py-2 bg-black text-white dark:bg-black"
           >
             <HiOutlineSparkles size={20} className="text-[#b49bff]" />
-            <span className="text-sm Welcome-text">Fullstack Developer</span>
+            <span className="text-sm">Software Engineer</span>
           </HoverBorderGradient>
+
           <div className="flex flex-col gap-4 mt-4">
             <h2 className="hero-title text-4xl sm:text-5xl font-bold">
               Krunal Thakar
@@ -27,12 +28,12 @@ const HomeSection = () => {
           </div>
 
           <p className="text-lg text-[var(--tertiary-color)] my-5 max-w-[600px]">
-            I'm a Full Stack Software Engineer with experience in Website,
-            Mobile, and Software development. Check out my projects and skills.
+            A Software Engineer specializing in full-stack development, test
+            automation, and DevOps. I build reliable, scalable systems — from
+            responsive web apps to CI/CD pipelines and AI-powered platforms.
           </p>
-
           <a
-            href="/Krunal Thakar - Resume (TD).pdf"
+            href="/Krunal_Thakar_Resume.pdf"
             // download="Krunal Thakar - Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -43,7 +44,13 @@ const HomeSection = () => {
         </div>
 
         <div className="w-full lg:w-1/2 flex justify-center">
-          <Image src={"/Programmer.gif"} alt="" width={400} height={400} unoptimized />
+          <Image
+            src={"/Programmer.gif"}
+            alt=""
+            width={400}
+            height={400}
+            unoptimized
+          />
         </div>
       </div>
     </section>

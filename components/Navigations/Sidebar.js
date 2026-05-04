@@ -84,15 +84,16 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                     Bio
                   </h4>
                   <p className="text-[var(--tertiary-color)]">
-                    A passionate MERN stack developer from India, specializing
-                    in building dynamic and responsive web application.
+                    Software Engineer specializing in full-stack development,
+                    test automation, and DevOps. Currently pursuing a Master's
+                    in Applied Computing at the University of Windsor.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-[var(--secondary-color)]">
                     Location
                   </h4>
-                  <p className="text-[var(--tertiary-color)]">ON, Canada.</p>
+                  <p className="text-[var(--tertiary-color)]">ON, Canada</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-[var(--secondary-color)]">

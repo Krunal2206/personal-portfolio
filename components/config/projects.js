@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: "AI-Powered Resume Analyzer & Job Matcher",
     description:
-      "A scalable SaaS platform that parses resumes with 95%+ accuracy, matches candidates to jobs using OpenAI GPT-4o, and delivers role-based dashboards for recruiters — cutting manual screening time by 50%.",
+      "A scalable SaaS platform that parses resumes and matches candidates to jobs using OpenAI GPT-4o. Features role-based dashboards for recruiters, Redis-optimized performance, and a full authentication system.",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -23,7 +23,7 @@ export const projects = [
     id: 2,
     title: "AI-Powered Interactive PDF Platform",
     description:
-      "A secure SaaS platform enabling conversational AI interaction with PDF documents using LangChain memory chains, achieving 80% faster query responses and boosting multi-device collaboration.",
+      "A secure SaaS platform enabling conversational AI interaction with PDF documents using LangChain memory chains. Supports multi-device collaboration with fast query responses and cross-browser compatibility.",
     techStack: [
       "Next.js",
       "TypeScript",
