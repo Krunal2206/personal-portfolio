@@ -14,7 +14,7 @@ export const projects = [
       "OpenAI GPT-4o",
       "Redis",
     ],
-    imageUrl: "/logo.png",
+    imageUrl: "/projects/resume-analyzer.png",
     githubLink:
       "https://github.com/Krunal2206/AI-Powered_Resume_Analyzer_with_Job_Matcher",
     liveDemo: "https://resume-analyzer-with-ai.vercel.app/",
@@ -33,7 +33,7 @@ export const projects = [
       "shadcn/ui",
       "Cloudinary",
     ],
-    imageUrl: "/logo.png",
+    imageUrl: "/projects/pdf-platform.png",
     githubLink:
       "https://github.com/Krunal2206/AI-Powered_Interactive_PDF_Platform",
     liveDemo: "https://project2.live",
