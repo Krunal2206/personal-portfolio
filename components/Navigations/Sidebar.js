@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <ProfileSection
                 image="/profile.jpg"
                 name="Krunal Thakar"
-                email="kru.dipnil@gmail.com"
+                email={`${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
               />
 
               {/* Buttons */}

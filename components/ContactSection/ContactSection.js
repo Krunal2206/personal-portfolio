@@ -1,13 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema } from "./schema";
 import FormField from "./FormField";
 import { motion } from "motion/react";
+import { Transition } from "@headlessui/react";
+import { FiCheckCircle } from "react-icons/fi";
+import { BiErrorCircle } from "react-icons/bi";
 
 const ContactSection = () => {
+  const [submitStatus, setSubmitStatus] = useState(null); // "success" | "error" | null
+
   const {
     register,
     handleSubmit,
@@ -19,6 +24,7 @@ const ContactSection = () => {
   });
 
   const onSubmit = async (data) => {
+    setSubmitStatus(null);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -32,13 +38,16 @@ const ContactSection = () => {
         setError("root", {
           message: result.message || "Something went wrong.",
         });
+        setSubmitStatus("error");
         return;
       }
 
       reset();
-      alert("Message sent successfully!");
+      setSubmitStatus("success");
+      setTimeout(() => setSubmitStatus(null), 6000);
     } catch (err) {
       setError("root", { message: "Network error. Please try again." });
+      setSubmitStatus("error");
     }
   };
 
@@ -51,6 +60,44 @@ const ContactSection = () => {
         className="max-w-2xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-lg shadow-lg"
       >
         <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
+
+        {/* Success Banner */}
+        <Transition
+          show={submitStatus === "success"}
+          enter="transition ease-out duration-300"
+          enterFrom="opacity-0 -translate-y-2"
+          enterTo="opacity-100 translate-y-0"
+          leave="transition ease-in duration-200"
+          leaveFrom="opacity-100 translate-y-0"
+          leaveTo="opacity-0 -translate-y-2"
+        >
+          <div className="flex items-center gap-3 mb-6 px-4 py-3 rounded-lg bg-green-500/20 border border-green-500/40 text-green-400">
+            <FiCheckCircle size={20} className="flex-shrink-0" />
+            <p className="text-sm font-medium">
+              Message sent! I'll get back to you soon.
+            </p>
+          </div>
+        </Transition>
+
+        {/* Error Banner */}
+        <Transition
+          show={submitStatus === "error"}
+          enter="transition ease-out duration-300"
+          enterFrom="opacity-0 -translate-y-2"
+          enterTo="opacity-100 translate-y-0"
+          leave="transition ease-in duration-200"
+          leaveFrom="opacity-100 translate-y-0"
+          leaveTo="opacity-0 -translate-y-2"
+        >
+          <div className="flex items-center gap-3 mb-6 px-4 py-3 rounded-lg bg-red-500/20 border border-red-500/40 text-red-400">
+            <BiErrorCircle size={20} className="flex-shrink-0" />
+            <p className="text-sm font-medium">
+              {errors.root?.message ||
+                "Something went wrong. Please try again."}
+            </p>
+          </div>
+        </Transition>
+
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           {/* First Name & Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -92,20 +139,39 @@ const ContactSection = () => {
             />
           </FormField>
 
-          {/* Root-level error */}
-          {errors.root && (
-            <p className="text-red-500 text-sm text-center">
-              {errors.root.message}
-            </p>
-          )}
-
           {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
             className="w-full py-3 rounded-full bg-[var(--primary-color)] text-[var(--background-color)] font-semibold shadow-md hover:bg-[var(--secondary-color)] transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? (
+              <span className="flex items-center justify-center gap-2">
+                <svg
+                  className="animate-spin h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8z"
+                  />
+                </svg>
+                Sending...
+              </span>
+            ) : (
+              "Send Message"
+            )}
           </button>
         </form>
       </motion.div>

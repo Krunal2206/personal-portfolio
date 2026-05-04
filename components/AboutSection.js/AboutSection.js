@@ -30,13 +30,37 @@ const AboutSection = () => {
             </div>
 
             {/* Biography */}
-            <p className="text-gray-300 text-justify leading-relaxed">
-              I am Krunal, a passionate developer specializing in MERN stack,
-              AI, and web automation. With experience in e-commerce, smart
-              automation, and theme development, I love building seamless
-              digital experiences. Always eager to learn and contribute to
-              open-source projects.
-            </p>
+            <div className="space-y-4 text-gray-300 text-justify leading-relaxed">
+              <p>
+                I'm Krunal Thakar, a Software Engineer and Master's student in
+                Applied Computing at the University of Windsor. My work spans
+                full-stack development, test automation, and DevOps — with a
+                focus on building software that is reliable, scalable, and
+                maintainable.
+              </p>
+              <p>
+                I have hands-on experience designing CI/CD pipelines,
+                containerizing applications with Docker, and building end-to-end
+                test automation frameworks using tools like Selenium,
+                Playwright, and Cucumber. I enjoy working across the stack —
+                from crafting responsive UIs with React and Next.js to
+                architecting backend services with Node.js, FastAPI, and RESTful
+                APIs.
+              </p>
+              <p>
+                I care deeply about code quality, automation, and delivering
+                software that works the first time. Whether it's integrating AI
+                capabilities, optimizing database performance, or setting up
+                DevSecOps quality gates — I bring the same level of attention to
+                detail to every layer of the stack.
+              </p>
+              <p>
+                Outside of work, I enjoy contributing to open-source projects,
+                exploring new technologies, and continuously sharpening my
+                problem-solving skills. I'm always looking for opportunities to
+                collaborate on meaningful projects and grow as an engineer.
+              </p>
+            </div>
           </div>
         </div>
       </div>

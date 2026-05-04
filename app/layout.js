@@ -3,7 +3,6 @@ import "./globals.css";
 import Particles from "@/components/Particles/Particles";
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import Footer from "@/components/Footer/Footer";
-import { ThemeProvider } from "@/lib/useTheme";
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
@@ -51,24 +50,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
-          {/* Background particles effect */}
-          <Particles />
+        {/* Background particles effect */}
+        <Particles />
 
-          {/* Sticky navigation bar */}
-          <Navigation />
+        {/* Sticky navigation bar */}
+        <Navigation />
 
-          {/* Page content */}
-          {children}
+        {/* Page content */}
+        {children}
 
-          {/* Scroll restoration helper */}
-          <ScrollToTop />
+        {/* Scroll restoration helper */}
+        <ScrollToTop />
 
-          {/* Site footer */}
-          <Footer />
+        {/* Site footer */}
+        <Footer />
 
-          <Analytics />
-        </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

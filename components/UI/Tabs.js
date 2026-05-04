@@ -19,13 +19,16 @@ const EducationItem = ({ item }) => (
 
 // Renders a single experience entry
 const ExperienceItem = ({ item }) => (
-  <div>
+  <div className="space-y-1">
     <h4 className="text-lg font-semibold text-[var(--secondary-color)]">
       💼 {item.role}
     </h4>
-    <p>{item.company}</p>
+    <p className="text-[var(--primary-color)]">
+      {item.company}
+    </p>
+    <p className="text-sm text-[var(--tertiary-color)]">{item.location}</p>
     <p className="text-sm text-[var(--tertiary-color)]">{item.period}</p>
-    <ul className="list-disc ml-5 mt-2 space-y-1 text-sm">
+    <ul className="list-disc ml-5 mt-2 space-y-1 text-sm text-[var(--secondary-color)] font-normal">
       {item.points.map((point, i) => (
         <li key={i}>{point}</li>
       ))}
@@ -87,7 +90,7 @@ export const Tabs = ({
         exit={{ opacity: 0 }}
       >
         <CardSpotlight>
-          <div className="w-full p-8 text-lg md:text-xl font-bold bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl">
+          <div className="w-full p-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl">
             <TabContent tab={activeTab} />
           </div>
         </CardSpotlight>

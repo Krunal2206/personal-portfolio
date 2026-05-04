@@ -1,3 +1,5 @@
+"use client";
+
 import NavigationLinks from "./NavigationLinks";
 
 const MobileNavigation = () => (

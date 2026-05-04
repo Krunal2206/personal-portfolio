@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import Image from "next/image";
@@ -5,7 +7,6 @@ import { socials } from "../config";
 import { Link } from "react-scroll";
 import SocialIcons from "../Common/SocialIcons";
 import NavigationLinks from "./NavigationLinks";
-import ThemeToggle from "./ThemeToggle";
 
 /**
  * Main navbar visible on desktop. Includes logo, nav links, and social icons.
@@ -43,7 +44,6 @@ const Navbar = ({ toggleSidebar }) => {
 
       {/* Right: Social icons */}
       <div className="flex items-center space-x-3 sm:space-x-5 text-[var(--primary-color)]">
-        <ThemeToggle />
         <SocialIcons items={socials} />
       </div>
     </nav>

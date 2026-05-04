@@ -9,21 +9,6 @@
   --color-shadow: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="light"] {
-  --background-color: #f5f5f5;
-  --primary-color: #0a0a0a;
-  --secondary-color: #444444;
-  --tertiary-color: #666666;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-*,
-*::before,
-*::after {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-}
-
 /* ✅ Tailwind v4: explicit source paths — covers app/, components/, pages/ */
 @source "../app/**/*.{js,ts,jsx,tsx}";
 @source "../components/**/*.{js,ts,jsx,tsx}";

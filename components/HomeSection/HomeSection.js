@@ -43,7 +43,7 @@ const HomeSection = () => {
         </div>
 
         <div className="w-full lg:w-1/2 flex justify-center">
-          <Image src={"/Programmer.gif"} alt="" width={400} height={400} />
+          <Image src={"/Programmer.gif"} alt="" width={400} height={400} unoptimized />
         </div>
       </div>
     </section>
