@@ -32,11 +32,11 @@ const AboutSection = () => {
             {/* Biography */}
             <div className="space-y-4 text-gray-300 text-justify leading-relaxed">
               <p>
-                I'm Krunal Thakar, a Software Engineer and Master's student in
-                Applied Computing at the University of Windsor. My work spans
-                full-stack development, test automation, and DevOps — with a
-                focus on building software that is reliable, scalable, and
-                maintainable.
+                I&apos;m Krunal Thakar, a Software Engineer and Master&apos;s
+                student in Applied Computing at the University of Windsor. My
+                work spans full-stack development, test automation, and DevOps —
+                with a focus on building software that is reliable, scalable,
+                and maintainable.
               </p>
               <p>
                 I have hands-on experience designing CI/CD pipelines,
@@ -49,7 +49,7 @@ const AboutSection = () => {
               </p>
               <p>
                 I care deeply about code quality, automation, and delivering
-                software that works the first time. Whether it's integrating AI
+                software that works the first time. Whether it&apos;s integrating AI
                 capabilities, optimizing database performance, or setting up
                 DevSecOps quality gates — I bring the same level of attention to
                 detail to every layer of the stack.
@@ -57,7 +57,7 @@ const AboutSection = () => {
               <p>
                 Outside of work, I enjoy contributing to open-source projects,
                 exploring new technologies, and continuously sharpening my
-                problem-solving skills. I'm always looking for opportunities to
+                problem-solving skills. I&apos;m always looking for opportunities to
                 collaborate on meaningful projects and grow as an engineer.
               </p>
             </div>
