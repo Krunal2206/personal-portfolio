@@ -45,6 +45,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold">Profile</h2>
                 <button
+                  type="button"
+                  aria-label="Close menu"
                   onClick={toggleSidebar}
                   className="cursor-pointer p-2 rounded-full hover:bg-[var(--primary-color)] hover:text-[var(--background-color)] transition"
                 >
@@ -85,7 +87,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                   </h4>
                   <p className="text-[var(--tertiary-color)]">
                     Software Engineer specializing in full-stack development,
-                    test automation, and DevOps. Currently pursuing a Master's
+                    test automation, and DevOps. Currently pursuing a Master&apos;s
                     in Applied Computing at the University of Windsor.
                   </p>
                 </div>
