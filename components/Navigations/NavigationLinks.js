@@ -18,6 +18,8 @@ const NavigationLinks = ({
       <ItemComponent key={index} className={itemClassName}>
         <Link
           to={item.href.replace("#", "")}
+          href={item.href}
+          aria-label={item.name}
           smooth
           duration={500}
           offset={-80}
