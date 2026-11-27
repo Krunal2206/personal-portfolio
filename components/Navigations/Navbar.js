@@ -13,20 +13,29 @@ import NavigationLinks from "./NavigationLinks";
  */
 const Navbar = ({ toggleSidebar }) => {
   return (
-    <nav className="fixed-navbar">
+    <nav aria-label="Primary" className="fixed-navbar">
       {/* Left: Hamburger menu & logo */}
       <div className="flex items-center space-x-4">
         <button
+          type="button"
+          aria-label="Open menu"
           onClick={toggleSidebar}
           className="text-[var(--primary-color)] hover:text-[var(--secondary-color)] cursor-pointer"
         >
-          <FaBars className="w-6 h-6" />
+          <FaBars className="w-6 h-6" aria-hidden="true" />
         </button>
 
-        <Link href="/">
+        <Link
+          to="home"
+          href="#home"
+          smooth
+          duration={500}
+          aria-label="Back to top"
+          className="cursor-pointer"
+        >
           <Image
             src="/logo.png"
-            alt="logo"
+            alt=""
             width={70}
             height={70}
             className="-mt-4"
